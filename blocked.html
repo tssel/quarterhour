@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Time's up</title>
+  <link rel="stylesheet" href="blocked.css">
+</head>
+<body>
+  <main>
+    <div class="mark">15</div>
+    <p class="eyebrow">QUARTER HOUR</p>
+    <h1>Time’s up for now.</h1>
+    <p id="message">You’ve used your 15 minutes for this rolling hour. The limit will refresh as time passes.</p>
+    <button id="back">Go back</button>
+  </main>
+  <script>
+    const site = new URLSearchParams(location.search).get("site");
+    if (site) document.querySelector("#message").textContent =
+      `You’ve used your 15 minutes on ${site} for this rolling hour. The limit will refresh as time passes.`;
+    document.querySelector("#back").addEventListener("click", () => history.back());
+  </script>
+</body>
+</html>

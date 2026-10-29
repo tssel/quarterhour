@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "Quarter Hour",
+  "version": "1.0.0",
+  "description": "Limit selected websites to 15 minutes per rolling hour.",
+  "permissions": [
+    "storage",
+    "tabs",
+    "webNavigation",
+    "alarms"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "Quarter Hour",
+    "default_popup": "popup.html"
+  },
+  "options_page": "popup.html"
+}

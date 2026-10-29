@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quarter Hour</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <main>
+    <header>
+      <div class="eyebrow">FOCUS CONTROL</div>
+      <h1>Quarter Hour</h1>
+      <p class="subtitle">Keep distracting sites to 15 minutes every rolling hour.</p>
+    </header>
+
+    <section class="status-card">
+      <div>
+        <span class="status-dot" id="status-dot"></span>
+        <strong id="status-label">Loading…</strong>
+      </div>
+      <button class="text-button" id="unlock-button" hidden>Unlock settings</button>
+    </section>
+
+    <section id="lock-panel" class="notice" hidden>
+      <strong>Settings are protected</strong>
+      <p id="unlock-message">Unlocking takes five minutes. You can keep using your protected sites while you wait.</p>
+      <div class="countdown" id="countdown"></div>
+    </section>
+
+    <form id="settings-form">
+      <label for="sites">Websites to limit</label>
+      <p class="hint">One domain per line, such as <code>youtube.com</code></p>
+      <textarea id="sites" rows="5" placeholder="youtube.com&#10;reddit.com&#10;tiktok.com"></textarea>
+
+      <label class="toggle-row">
+        <span>
+          <strong>Protection active</strong>
+          <small>Count active-tab time and block sites after 15 minutes.</small>
+        </span>
+        <input id="enabled" type="checkbox">
+      </label>
+
+      <button class="primary-button" id="save-button" type="submit">Save settings</button>
+    </form>
+
+    <section>
+      <div class="section-title">This hour</div>
+      <div id="usage-list" class="usage-list"></div>
+    </section>
+
+    <button class="danger-button" id="reset-button" type="button">Reset usage timers</button>
+    <p class="error" id="error" role="alert"></p>
+  </main>
+  <script src="popup.js"></script>
+</body>
+</html>
